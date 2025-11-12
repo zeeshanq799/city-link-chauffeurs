@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - City Link Chauffeurs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body { background: #F5F5F5; }
+        .header-section { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; padding: 40px 0; }
+        .filter-tabs { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        .filter-btn { background: white; border: 2px solid #DDD; color: #333; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all .3s; }
+        .filter-btn:hover { border-color: #FF5722; }
+        .filter-btn.active { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; border-color: transparent; }
+        .booking-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        .booking-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px; }
+        .booking-title { font-weight: 700; color: #333; }
+        .booking-detail { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 15px 0; }
+        .detail-item { font-size: 0.9rem; }
+        .detail-label { color: #999; }
+        .detail-value { font-weight: 600; color: #333; }
+        .status-badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .status-completed { background: rgba(76,175,80,.2); color: #4CAF50; }
+        .status-ongoing { background: rgba(255,152,0,.2); color: #FF9800; }
+        .status-upcoming { background: rgba(33,150,243,.2); color: #2196F3; }
+        .status-cancelled { background: rgba(244,67,54,.2); color: #F44336; }
+        .booking-actions { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .btn-action { padding: 8px 15px; border: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+        .btn-view { background: rgba(33,150,243,.2); color: #2196F3; }
+        .btn-view:hover { background: rgba(33,150,243,.3); }
+        .btn-rate { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; }
+        .btn-rate:hover { box-shadow: 0 4px 12px rgba(255,87,34,.3); }
+        /* Dropdown Styling */
+        .dropdown-toggle::after { display: inline-block; margin-left: 8px; }
+        .btn-login.dropdown-toggle { white-space: nowrap; display: inline-block; }
+        /* Mobile Dropdown Styles */
+        @media (max-width: 991px) {
+            .navbar-nav { gap: 0; }
+            .dropdown-menu { position: static !important; border: none; box-shadow: none; background: #f8f9fa; padding-left: 20px; }
+            .dropdown-menu li { margin: 5px 0; }
+            .dropdown-item { color: #333 !important; padding: 10px 15px; }
+            .dropdown-item:hover { background: rgba(255,87,34,.1) !important; }
+            .dropdown-item i { width: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link btn-login dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user me-2"></i>John Doe</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-th-large me-2"></i>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="my-bookings.html"><i class="fas fa-book me-2"></i>My Bookings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<div class="header-section">
+    <div class="container">
+        <h1><i class="fas fa-book me-2"></i>My Bookings</h1>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main class="container my-5">
+    <!-- Filter Tabs -->
+    <div class="filter-tabs" data-aos="fade-up">
+        <button class="filter-btn active" onclick="filterBookings('all')">All Bookings (12)</button>
+        <button class="filter-btn" onclick="filterBookings('upcoming')">Upcoming (2)</button>
+        <button class="filter-btn" onclick="filterBookings('ongoing')">Ongoing (1)</button>
+        <button class="filter-btn" onclick="filterBookings('completed')">Completed (8)</button>
+        <button class="filter-btn" onclick="filterBookings('cancelled')">Cancelled (1)</button>
+    </div>
+
+    <!-- Upcoming Trips -->
+    <div id="upcoming-section" data-aos="fade-up">
+        <h4 class="mb-3">Upcoming Trips</h4>
+        <div class="booking-card">
+            <div class="booking-header">
+                <div>
+                    <div class="booking-title">Booking #BK-2025-00145</div>
+                    <div style="color: #999; font-size: 0.9rem;">Tomorrow, 6:30 PM</div>
+                </div>
+                <span class="status-badge status-upcoming"><i class="fas fa-clock me-1"></i>UPCOMING</span>
+            </div>
+            <div class="booking-detail">
+                <div class="detail-item">
+                    <div class="detail-label">Service Type</div>
+                    <div class="detail-value">Airport Transfer</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Vehicle</div>
+                    <div class="detail-value">Premium Sedan</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Driver</div>
+                    <div class="detail-value">Robert Davis</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Distance</div>
+                    <div class="detail-value">22 km</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Estimated Time</div>
+                    <div class="detail-value">28 minutes</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Total Price</div>
+                    <div class="detail-value" style="color: #FF5722;">$45.00</div>
+                </div>
+            </div>
+            <div class="booking-actions">
+                <button class="btn-action btn-view"><i class="fas fa-eye me-1"></i>View Details</button>
+                <button class="btn-action" style="background: rgba(255,152,0,.2); color: #FF9800;"><i class="fas fa-phone me-1"></i>Contact Driver</button>
+            </div>
+        </div>
+        <div class="booking-card">
+            <div class="booking-header">
+                <div>
+                    <div class="booking-title">Booking #BK-2025-00144</div>
+                    <div style="color: #999; font-size: 0.9rem;">Nov 14, 2:15 PM</div>
+                </div>
+                <span class="status-badge status-upcoming"><i class="fas fa-clock me-1"></i>UPCOMING</span>
+            </div>
+            <div class="booking-detail">
+                <div class="detail-item">
+                    <div class="detail-label">Service Type</div>
+                    <div class="detail-value">Business Travel</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Vehicle</div>
+                    <div class="detail-value">Business Class</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Driver</div>
+                    <div class="detail-value">Maria Garcia</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Distance</div>
+                    <div class="detail-value">15 km</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Estimated Time</div>
+                    <div class="detail-value">20 minutes</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Total Price</div>
+                    <div class="detail-value" style="color: #FF5722;">$55.00</div>
+                </div>
+            </div>
+            <div class="booking-actions">
+                <button class="btn-action btn-view"><i class="fas fa-eye me-1"></i>View Details</button>
+                <button class="btn-action" style="background: rgba(255,152,0,.2); color: #FF9800;"><i class="fas fa-phone me-1"></i>Contact Driver</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ongoing Trip -->
+    <div id="ongoing-section" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="mb-3 mt-4">Ongoing Trips</h4>
+        <div class="booking-card">
+            <div class="booking-header">
+                <div>
+                    <div class="booking-title">Booking #BK-2025-00143</div>
+                    <div style="color: #999; font-size: 0.9rem;">Today, In progress</div>
+                </div>
+                <span class="status-badge status-ongoing"><i class="fas fa-spinner fa-spin me-1"></i>ONGOING</span>
+            </div>
+            <div class="booking-detail">
+                <div class="detail-item">
+                    <div class="detail-label">Route</div>
+                    <div class="detail-value">Downtown to Business District</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Driver</div>
+                    <div class="detail-value">James Wilson</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Time Remaining</div>
+                    <div class="detail-value">12 minutes</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Current Rate</div>
+                    <div class="detail-value" style="color: #FF5722;">$0.75/min</div>
+                </div>
+            </div>
+            <div class="booking-actions">
+                <button class="btn-action btn-view"><i class="fas fa-eye me-1"></i>View Details</button>
+                <button class="btn-action" style="background: rgba(255,152,0,.2); color: #FF9800;"><i class="fas fa-phone me-1"></i>Contact Driver</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completed Trips -->
+    <div id="completed-section" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="mb-3 mt-4">Completed Trips</h4>
+        <div class="booking-card">
+            <div class="booking-header">
+                <div>
+                    <div class="booking-title">Booking #BK-2025-00140</div>
+                    <div style="color: #999; font-size: 0.9rem;">Nov 10, 2025</div>
+                </div>
+                <span class="status-badge status-completed"><i class="fas fa-check-circle me-1"></i>COMPLETED</span>
+            </div>
+            <div class="booking-detail">
+                <div class="detail-item">
+                    <div class="detail-label">Service Type</div>
+                    <div class="detail-value">Airport Transfer</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Vehicle</div>
+                    <div class="detail-value">Premium Sedan</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Driver</div>
+                    <div class="detail-value">Robert Davis</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Distance</div>
+                    <div class="detail-value">22 km</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Duration</div>
+                    <div class="detail-value">28 min</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Total Price</div>
+                    <div class="detail-value" style="color: #FF5722;">$45.00</div>
+                </div>
+            </div>
+            <div class="booking-actions">
+                <button class="btn-action btn-view"><i class="fas fa-eye me-1"></i>View Details</button>
+                <button class="btn-action btn-rate"><i class="fas fa-star me-1"></i>Rate Driver</button>
+            </div>
+        </div>
+        <div class="booking-card">
+            <div class="booking-header">
+                <div>
+                    <div class="booking-title">Booking #BK-2025-00139</div>
+                    <div style="color: #999; font-size: 0.9rem;">Nov 8, 2025</div>
+                </div>
+                <span class="status-badge status-completed"><i class="fas fa-check-circle me-1"></i>COMPLETED</span>
+            </div>
+            <div class="booking-detail">
+                <div class="detail-item">
+                    <div class="detail-label">Service Type</div>
+                    <div class="detail-value">Business Travel</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Vehicle</div>
+                    <div class="detail-value">Business Class</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Driver</div>
+                    <div class="detail-value">Maria Garcia</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Distance</div>
+                    <div class="detail-value">15 km</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Duration</div>
+                    <div class="detail-value">20 min</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Total Price</div>
+                    <div class="detail-value" style="color: #FF5722;">$55.00</div>
+                </div>
+            </div>
+            <div class="booking-actions">
+                <button class="btn-action btn-view"><i class="fas fa-eye me-1"></i>View Details</button>
+                <button class="btn-action btn-rate"><i class="fas fa-star me-1"></i>Rate Driver</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancelled Trips -->
+    <div id="cancelled-section" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="mb-3 mt-4">Cancelled Trips</h4>
+        <div class="booking-card">
+            <div class="booking-header">
+                <div>
+                    <div class="booking-title">Booking #BK-2025-00130</div>
+                    <div style="color: #999; font-size: 0.9rem;">Oct 25, 2025</div>
+                </div>
+                <span class="status-badge status-cancelled"><i class="fas fa-times-circle me-1"></i>CANCELLED</span>
+            </div>
+            <div class="booking-detail">
+                <div class="detail-item">
+                    <div class="detail-label">Service Type</div>
+                    <div class="detail-value">City Tour</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Original Date</div>
+                    <div class="detail-value">Oct 25, 2025</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Cancellation Reason</div>
+                    <div class="detail-value">Driver Cancelled</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Refund Status</div>
+                    <div class="detail-value" style="color: #4CAF50;">Refunded</div>
+                </div>
+            </div>
+            <div class="booking-actions">
+                <button class="btn-action btn-view"><i class="fas fa-eye me-1"></i>View Details</button>
+                <button class="btn-rate"><i class="fas fa-plus me-1"></i>Book Again</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5>About City Link Chauffeurs</h5>
+                <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                <div class="footer-social mt-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="package_deals.html">Package Deals</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="service_point_to_point.html">Point to Point</a></li>
+                    <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                    <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                    <li><a href="service_corporate.html">Corporate Services</a></li>
+                    <li><a href="#">Special Events</a></li>
+                    <li><a href="#">Tours & Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                    <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                    <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                <a href="register.html" style="color: var(--color-gold)">Register</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+    function filterBookings(filter) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        document.getElementById('upcoming-section').style.display = filter === 'all' || filter === 'upcoming' ? 'block' : 'none';
+        document.getElementById('ongoing-section').style.display = filter === 'all' || filter === 'ongoing' ? 'block' : 'none';
+        document.getElementById('completed-section').style.display = filter === 'all' || filter === 'completed' ? 'block' : 'none';
+        document.getElementById('cancelled-section').style.display = filter === 'all' || filter === 'cancelled' ? 'block' : 'none';
+    }
+</script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Link Chauffeurs - Contact Us | Get in Touch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link btn-login" href="login.html"><i class="fas fa-user me-2"></i>Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section position-relative d-flex align-items-center justify-content-center" style="min-height: 60vh; background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&auto=format&fit=crop') center/cover;">
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35)); z-index:1;"></div>
+    <div class="container text-center position-relative" style="z-index:2;">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Get in <span>Touch</span></h1>
+            <p class="lead">We're here to help and answer any question you might have</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Cards -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-phone text-gold" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Call Us</h5>
+                        <p class="text-muted mb-2">Reach us by phone for immediate assistance</p>
+                        <h6 class="fw-bold text-dark">
+                            <a href="tel:1-877-435-5466" style="color: inherit; text-decoration: none;">
+                                1-877-435-5466
+                            </a>
+                        </h6>
+                        <p class="small text-muted mt-2">Available 24/7</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-envelope text-gold" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Email Us</h5>
+                        <p class="text-muted mb-2">Send us your inquiries and we'll respond promptly</p>
+                        <h6 class="fw-bold text-dark">
+                            <a href="mailto:info@citylinkchauffeurs.com" style="color: inherit; text-decoration: none;">
+                                info@citylinkchauffeurs.com
+                            </a>
+                        </h6>
+                        <p class="small text-muted mt-2">Response within 2 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-map-marker-alt text-gold" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Visit Us</h5>
+                        <p class="text-muted mb-2">Come visit our office and meet our team</p>
+                        <h6 class="fw-bold text-dark">Sialkot, Punjab<br>Pakistan</h6>
+                        <p class="small text-muted mt-2">Mon - Fri: 9 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="section-title mb-4">
+                    <h2>Send Us a <span>Message</span></h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Full Name *</label>
+                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Email Address *</label>
+                            <input type="email" class="form-control" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Service Type</label>
+                            <select class="form-select">
+                                <option selected>Select a service</option>
+                                <option value="airport">Airport Transfer</option>
+                                <option value="corporate">Corporate Services</option>
+                                <option value="hourly">Hourly Charter</option>
+                                <option value="wedding">Special Events</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Subject *</label>
+                        <input type="text" class="form-control" placeholder="What is this about?" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Message *</label>
+                        <textarea class="form-control" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                        <label class="form-check-label" for="agreeTerms">
+                            I agree to the <a href="#" style="color: var(--color-gold);">Privacy Policy</a> and <a href="#" style="color: var(--color-gold);">Terms of Service</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary-gradient btn-lg w-100">
+                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="col-lg-4" data-aos="fade-left">
+                <div class="card border-0 shadow mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-4">Business Hours</h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Monday - Friday:</span>
+                            <strong>9:00 AM - 6:00 PM</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Saturday:</span>
+                            <strong>10:00 AM - 4:00 PM</strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Sunday:</span>
+                            <strong>Closed</strong>
+                        </div>
+                        <hr>
+                        <p class="text-muted small mb-0"><i class="fas fa-info-circle me-2"></i>Available 24/7 for emergency bookings</p>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-4">Response Times</h5>
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-phone text-gold me-2"></i>
+                                <span><strong>Phone:</strong> Immediate</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-envelope text-gold me-2"></i>
+                                <span><strong>Email:</strong> Within 2 hours</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-comments text-gold me-2"></i>
+                                <span><strong>Contact Form:</strong> Within 24 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-4">Follow Us</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn btn-outline-gold btn-sm" style="color: var(--color-gold); border-color: var(--color-gold);">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-gold btn-sm" style="color: var(--color-gold); border-color: var(--color-gold);">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-gold btn-sm" style="color: var(--color-gold); border-color: var(--color-gold);">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-gold btn-sm" style="color: var(--color-gold); border-color: var(--color-gold);">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+            <h2>Frequently Asked <span>Questions</span></h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="accordion" id="faqAccordion1">
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What is your cancellation policy?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion1">
+                            <div class="accordion-body text-muted">
+                                We offer free cancellations up to 24 hours before your scheduled pickup. Cancellations made within 24 hours may incur a fee based on our cancellation policy.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                How do I book a service?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                            <div class="accordion-body text-muted">
+                                You can book through our website, call us at 1-877-435-5466, or send us an email. Our team will confirm your booking within 2 hours.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                What payment methods do you accept?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                            <div class="accordion-body text-muted">
+                                We accept all major credit cards (Visa, MasterCard, American Express), bank transfers, and digital payment methods. Corporate accounts also available.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="accordion" id="faqAccordion2">
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Are your drivers background-checked?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                            <div class="accordion-body text-muted">
+                                Yes, all our chauffeurs are thoroughly background-checked, licensed, and insured. We maintain the highest standards of safety and professionalism.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                Do you offer corporate accounts?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                            <div class="accordion-body text-muted">
+                                Yes, we offer flexible corporate accounts with customized billing, priority scheduling, and dedicated account management.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                What areas do you serve?
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                            <div class="accordion-body text-muted">
+                                We serve major cities and regional destinations throughout California, including San Francisco, Oakland, Los Angeles, San Jose, and surrounding areas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" data-aos="fade-up">
+    <div class="container">
+        <h2>Ready to Book Your Ride?</h2>
+        <p>Experience premium chauffeur services today</p>
+        <div class="cta-buttons">
+            <a href="package_deals.html" class="btn btn-primary-gradient btn-lg">Browse Packages</a>
+            <a href="vehicles.html" class="btn btn-outline-light btn-lg">View Vehicles</a>
+        </div>
+    </div>
+</section>
+
+<!-- Destinations Section -->
+<section class="destinations-section">
+    <div class="container">
+        <h2 class="destinations-title mb-5">DESTINATIONS</h2>
+        <div class="row mb-5">
+            <!-- Column 1 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">El Sobrante, CA</a></li>
+                    <li><a href="#">Atherton, CA</a></li>
+                    <li><a href="#">Lathrop, CA</a></li>
+                    <li><a href="#">Albany, CA</a></li>
+                    <li><a href="#">Manteca, CA</a></li>
+                    <li><a href="#">Discovery Bay, CA</a></li>
+                    <li><a href="#">Martinez, CA</a></li>
+                    <li><a href="#">Benicia, CA</a></li>
+                    <li><a href="#">Berkeley, CA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <a href="#" class="view-all-destinations">View all destinations</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5>About City Link Chauffeurs</h5>
+                <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                <div class="footer-social mt-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="package_deals.html">Package Deals</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="service_point_to_point.html">Point to Point</a></li>
+                    <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                    <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                    <li><a href="service_corporate.html">Corporate Services</a></li>
+                    <li><a href="#">Special Events</a></li>
+                    <li><a href="#">Tours & Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                    <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                    <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                <a href="register.html" style="color: var(--color-gold)">Register</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you shortly.');
+        this.reset();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings & Reviews - City Link</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body { background: #F5F5F5; }
+        .header { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; padding: 40px 0; }
+        .rating-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        .star { color: #D4AF37; font-size: 1.2rem; }
+        .review-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .review-item:last-child { border-bottom: none; }
+        .avg-rating { font-size: 3rem; font-weight: 700; color: #FF5722; }
+        /* Mobile Dropdown Styles */
+        @media (max-width: 991px) {
+            .navbar-nav { gap: 0; }
+            .dropdown-menu { position: static !important; border: none; box-shadow: none; background: #f8f9fa; padding-left: 20px; }
+            .dropdown-menu li { margin: 5px 0; }
+            .dropdown-item { color: #333 !important; padding: 10px 15px; }
+            .dropdown-item:hover { background: rgba(255,87,34,.1) !important; }
+            .dropdown-item i { width: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center flex-column flex-lg-row">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link btn-login dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user me-2"></i>John Doe</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-th-large me-2"></i>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="my-bookings.html"><i class="fas fa-book me-2"></i>My Bookings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="header">
+    <div class="container">
+        <h1>Your Ratings & Reviews</h1>
+    </div>
+</div>
+
+<main class="container my-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="rating-card text-center" data-aos="fade-up">
+                <div class="avg-rating">4.8</div>
+                <div style="color: #D4AF37; font-size: 1.1rem; margin-bottom: 10px;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p style="color: #666;">Based on 42 rides</p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="rating-card" data-aos="fade-up" data-aos-delay="100">
+                <h5 style="margin-bottom: 20px;">Rating Breakdown</h5>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span>5 Stars</span><span style="color: #666;">35 (83%)</span>
+                    </div>
+                    <div style="background: #F5F5F5; border-radius: 4px; overflow: hidden;">
+                        <div style="background: #4CAF50; height: 8px; width: 83%;"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span>4 Stars</span><span style="color: #666;">5 (12%)</span>
+                    </div>
+                    <div style="background: #F5F5F5; border-radius: 4px; overflow: hidden;">
+                        <div style="background: #8BC34A; height: 8px; width: 12%;"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span>3 Stars</span><span style="color: #666;">2 (5%)</span>
+                    </div>
+                    <div style="background: #F5F5F5; border-radius: 4px; overflow: hidden;">
+                        <div style="background: #FFC107; height: 8px; width: 5%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 style="margin-top: 40px; margin-bottom: 20px;">Recent Reviews</h5>
+    <div class="rating-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="review-item">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                    <h6 style="margin: 0;">Professional and Courteous</h6>
+                    <div class="star" style="font-size: 0.9rem; margin: 5px 0;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="margin: 8px 0 0 0; color: #666; font-size: 0.9rem;">Excellent service, driver was very polite and punctual. Would book again!</p>
+                    <small style="color: #999;">By Marcus - 2 days ago</small>
+                </div>
+                <button style="background: rgba(244,67,54,.2); color: #F44336; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Delete</button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                    <h6 style="margin: 0;">Great Experience</h6>
+                    <div class="star" style="font-size: 0.9rem; margin: 5px 0;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="margin: 8px 0 0 0; color: #666; font-size: 0.9rem;">Clean car, smooth ride, and professional driver. Highly recommended!</p>
+                    <small style="color: #999;">By Sarah - 5 days ago</small>
+                </div>
+                <button style="background: rgba(244,67,54,.2); color: #F44336; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Delete</button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                    <h6 style="margin: 0;">Good Service</h6>
+                    <div class="star" style="font-size: 0.9rem; margin: 5px 0;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="margin: 8px 0 0 0; color: #666; font-size: 0.9rem;">Driver was friendly but took a longer route than expected.</p>
+                    <small style="color: #999;">By David - 1 week ago</small>
+                </div>
+                <button style="background: rgba(244,67,54,.2); color: #F44336; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Delete</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer mt-5"><div class="container"><div class="row g-4"><div class="col-lg-4"><h5>About City Link</h5><p style="color: rgba(255,255,255,.7);">Premium chauffeur services.</p></div><div class="col-lg-8"><div class="row"><div class="col-md-4"><h5>Links</h5><ul><li><a href="index.html">Home</a></li></ul></div><div class="col-md-4"><h5>Services</h5><ul><li><a href="#">Airport</a></li></ul></div><div class="col-md-4"><h5>Contact</h5><ul><li><i class="fas fa-phone me-2"></i>1-877-435-5466</li></ul></div></div></div></div><div class="footer-bottom"><p>&copy; 2025 City Link Chauffeurs.</p></div></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
+
+
+
+
+
+

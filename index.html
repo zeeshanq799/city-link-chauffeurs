@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Link Chauffeurs - Premium Chauffeur Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS (Bootstrap + Icons + Fonts + AOS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+
+<!-- Alert Bar -->
+<!-- <div class="alert-bar">
+    <i class="fas fa-star"></i>
+    Special Offer: Get 20% OFF on your first booking! Use code: FIRST20
+</div> -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link btn-login" href="login.html"><i class="fas fa-user me-2"></i>Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section" id="home">
+    <div class="hero-wrapper">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Premium <span>Chauffeur</span> Services</h1>
+            <p>Experience luxury, comfort, and professionalism with every journey</p>
+            <div class="hero-phone mb-4">
+                <div class="phone-text">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    <span>Call Us: 1-877-435-5466</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-hero btn-primary-gradient">Book Now</a>
+                <a href="#vehicles" class="btn btn-hero btn-outline-gold">View Vehicles</a>
+            </div>
+        </div>
+
+        <!-- Quick Booking -->
+            <div class="quick-booking" id="booking">
+                <h3><i class="fas fa-calendar-check me-2" style="color: var(--color-gold)"></i>Book A Ride</h3>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Select Service Type</label>
+                        <select class="form-select">
+                            <option>Point-to-Point Transportation</option>
+                            <option>Hourly Charter</option>
+                            <option>Airport Transfer</option>
+                            <option>Corporate</option>
+                        </select>
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Pick-Up Date</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control">
+                                <span class="input-group-text"><i class="fa-regular fa-calendar"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Pick-Up Time</label>
+                            <div class="input-group">
+                                <input type="time" class="form-control">
+                                <span class="input-group-text"><i class="fa-regular fa-clock"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pick-Up Location</label>
+                        <input type="text" class="form-control" placeholder="Your pick-up location">
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-link p-0"><i class="fa fa-plus me-1"></i>Add Stop</button>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Drop-Off Location</label>
+                        <input type="text" class="form-control" placeholder="Your drop-off location">
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-book w-100">Continue Booking</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services-section" id="services">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Services</h2>
+            <p>Premium transportation solutions for every occasion</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-route"></i></div>
+                    <h4>Point to Point</h4>
+                    <p>Direct transfers with precise timing and comfort</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Hourly Charter</h4>
+                    <p>Flexible hourly booking for your convenience</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-plane"></i></div>
+                    <h4>Airport Transfer</h4>
+                    <p>Seamless airport pickups and drop-offs</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                    <h4>Corporate</h4>
+                    <p>Professional business travel solutions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- What We Do Section with Slider -->
+<section class="what-we-do-section">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>What We <span>Do</span></h2>
+            <p>Discover our premium transportation services</p>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="what-we-do-slider-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <!-- Slider -->
+            <div class="what-we-do-slider">
+                <!-- Slide 1: Airport Transportation -->
+                <div class="what-we-do-slide active">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop" alt="Airport Transportation" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="fw-bold mb-3">Airport Transportation</h3>
+                            <p class="lead mb-3">Book an Airport Transportation, Car, Sedan, SUV, and Van services for Airport Transfer To and From major airports. Our professional chauffeurs ensure stress-free airport transfers with real-time flight tracking and meet & greet service.</p>
+                            <a href="service_business_travel.html" class="btn btn-primary-gradient">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Corporate Services -->
+                <div class="what-we-do-slide">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop" alt="Corporate Services" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="fw-bold mb-3">Corporate Services</h3>
+                            <p class="lead mb-3">Premium corporate transportation for executive clients and business professionals. Our dedicated corporate services include monthly accounts, executive amenities, priority scheduling, and flexible billing options tailored to your business needs.</p>
+                            <a href="service_business_travel.html" class="btn btn-primary-gradient">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Point to Point -->
+                <div class="what-we-do-slide">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" alt="Point to Point Services" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="fw-bold mb-3">Point to Point Transportation</h3>
+                            <p class="lead mb-3">Direct transfers with precise timing and maximum comfort. Whether you're attending business meetings, special events, or need daily commuting services, our point-to-point transportation provides reliable and professional service to your exact destination.</p>
+                            <a href="service_business_travel.html" class="btn btn-primary-gradient">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Hourly Charter -->
+                <div class="what-we-do-slide">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" alt="Hourly Charter" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="fw-bold mb-3">Hourly Charter Services</h3>
+                            <p class="lead mb-3">Flexible hourly booking perfect for meetings, city tours, shopping trips, and multi-destination itineraries. Our hourly charter service allows you to create your own schedule with multiple stops and customized routes throughout the day.</p>
+                            <a href="service_business_travel.html" class="btn btn-primary-gradient">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <button class="slider-btn slider-prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn slider-next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Slider Indicators -->
+            <div class="slider-indicators">
+                <button class="indicator active" onclick="currentSlide(1)"></button>
+                <button class="indicator" onclick="currentSlide(2)"></button>
+                <button class="indicator" onclick="currentSlide(3)"></button>
+                <button class="indicator" onclick="currentSlide(4)"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vehicles -->
+<section class="fleet-section" id="vehicles">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Premium Vehicles</h2>
+            <p>Choose from our selection of luxury vehicles</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="vehicle-card">
+                    <div class="vehicle-img">
+                        <span class="badge-popular">Most Popular</span>
+                        <img src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=600" alt="Business Sedan">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Business Sedan</h4>
+                        <div class="vehicle-capacity">
+                            <span><i class="fas fa-user"></i> 3 Passengers</span>
+                            <span><i class="fas fa-suitcase"></i> 3 Luggage</span>
+                        </div>
+                        <div class="vehicle-price"><small>Rate: From</small> $79.95 <small>/ hour</small></div>
+                        <div class="d-flex gap-2">
+                            <a href="vehicle_details.html" class="btn btn-book-vehicle">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" alt="Luxury SUV">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Luxury SUV</h4>
+                        <div class="vehicle-capacity">
+                            <span><i class="fas fa-user"></i> 6 Passengers</span>
+                            <span><i class="fas fa-suitcase"></i> 6 Luggage</span>
+                        </div>
+                        <div class="vehicle-price"><small>Rate: From</small> $120 <small>/ hour</small></div>
+                        <a href="vehicle_details.html" class="btn btn-book-vehicle">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" alt="Premium Sedan">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Premium Sedan</h4>
+                        <div class="vehicle-capacity">
+                            <span><i class="fas fa-user"></i> 3 Passengers</span>
+                            <span><i class="fas fa-suitcase"></i> 3 Luggage</span>
+                        </div>
+                        <div class="vehicle-price"><small>Rate: From</small> $95 <small>/ hour</small></div>
+                        <a href="vehicle_details.html" class="btn btn-book-vehicle">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="vehicles.html" class="btn btn-hero btn-primary-gradient">View All Vehicles</a>
+        </div>
+    </div>
+</section>
+
+<!-- Tour Packages -->
+<section class="fleet-section" style="background: white;">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Tour Packages</h2>
+            <p>Explore our curated luxury tour experiences</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <span class="badge-tour"><i class="fas fa-wine-glass-alt"></i> Wine Tour</span>
+                        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80" alt="Napa Valley Wine Tour">
+                    </div>
+                    <div class="tour-info">
+                        <h4>Napa Valley Wine Tasting</h4>
+                        <p class="tour-description">Experience world-class wineries with our premium chauffeur service. Visit 3-4 exclusive wineries and savor the finest wines.</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-clock"></i> 6 Hours</span>
+                            <span><i class="fas fa-users"></i> 6 People</span>
+                        </div>
+                        <div class="tour-price">$475.00 <small>/ per tour</small></div>
+                        <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book This Tour</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <span class="badge-tour"><i class="fas fa-city"></i> City Tour</span>
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80" alt="San Francisco Tour">
+                    </div>
+                    <div class="tour-info">
+                        <h4>San Francisco Highlights</h4>
+                        <p class="tour-description">Discover iconic landmarks including Golden Gate Bridge, Fisherman's Wharf, Pier 39, and experience the charm of San Francisco.</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-clock"></i> 4 Hours</span>
+                            <span><i class="fas fa-users"></i> 3 People</span>
+                        </div>
+                        <div class="tour-price">$350.00 <small>/ per tour</small></div>
+                        <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book This Tour</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <span class="badge-tour"><i class="fas fa-tree"></i> Nature Tour</span>
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80" alt="Muir Woods Tour">
+                    </div>
+                    <div class="tour-info">
+                        <h4>Muir Woods & Sausalito</h4>
+                        <p class="tour-description">Explore ancient coastal redwood forest and charming Sausalito town with our luxury transport and experienced guide.</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-clock"></i> 5 Hours</span>
+                            <span><i class="fas fa-users"></i> 6 People</span>
+                        </div>
+                        <div class="tour-price">$425.00 <small>/ per tour</small></div>
+                        <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book This Tour</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="package_deals.html" class="btn btn-hero btn-primary-gradient">View All Tours</a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-section">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Why Choose City Link Chauffeurs</h2>
+            <p>Experience the difference with our premium service</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+                    <h5>Professional Drivers</h5>
+                    <p>Licensed & vetted chauffeurs</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-car-side"></i></div>
+                    <h5>Luxury Vehicles</h5>
+                    <p>Premium vehicles</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h5>Transparent Pricing</h5>
+                    <p>No hidden fees</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h5>24/7 Service</h5>
+                    <p>Available anytime</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h5>Real-time Tracking</h5>
+                    <p>Track your ride</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-plane-arrival"></i></div>
+                    <h5>Flight Monitoring</h5>
+                    <p>Auto-adjusted pickups</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by thousands of satisfied customers</p>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="100">
+                <!-- Widget Placeholder -->
+                <div class="widget-placeholder" style="min-height: 300px; border: 2px dashed #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: #f8f9fa;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-comments" style="font-size: 3rem; color: #ddd; margin-bottom: 15px;"></i>
+                        <h4 style="color: #666; margin-bottom: 10px;">Testimonials Widget</h4>
+                        <p style="color: #999; margin: 0;">Widget will be integrated here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" data-aos="fade-up">
+    <div class="container">
+        <h2>Ready to Experience Luxury?</h2>
+        <p>Book your premium chauffeur service today and travel in style</p>
+        <a href="#" class="btn"><i class="fas fa-phone-alt me-2"></i>Call Us: 1-877-435-5466</a>
+    </div>
+</section>
+
+<!-- Destinations Section -->
+<section class="destinations-section">
+    <div class="container">
+        <h2 class="destinations-title mb-5">DESTINATIONS</h2>
+        <div class="row mb-5">
+            <!-- Column 1 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">El Sobrante, CA</a></li>
+                    <li><a href="#">Atherton, CA</a></li>
+                    <li><a href="#">Lathrop, CA</a></li>
+                    <li><a href="#">Albany, CA</a></li>
+                    <li><a href="#">Manteca, CA</a></li>
+                    <li><a href="#">Discovery Bay, CA</a></li>
+                    <li><a href="#">Martinez, CA</a></li>
+                    <li><a href="#">Benicia, CA</a></li>
+                    <li><a href="#">Berkeley, CA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <a href="#" class="view-all-destinations">View all destinations</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5>About City Link Chauffeurs</h5>
+                <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                <div class="footer-social mt-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="package_deals.html">Package Deals</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="service_point_to_point.html">Point to Point</a></li>
+                    <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                    <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                    <li><a href="service_corporate.html">Corporate Services</a></li>
+                    <li><a href="#">Special Events</a></li>
+                    <li><a href="#">Tours & Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                    <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                    <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                <a href="register.html" style="color: var(--color-gold)">Register</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>

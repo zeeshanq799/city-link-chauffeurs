@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - City Link Chauffeurs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body { background: #F5F5F5; }
+        .profile-header { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; padding: 40px 0; }
+        .profile-card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,.1); margin-bottom: 25px; }
+        .nav-tabs .nav-link { color: #666; border: none; border-bottom: 3px solid transparent; }
+        .nav-tabs .nav-link.active { color: #FF5722; border-bottom-color: #FF5722; background: none; }
+        .tab-content { margin-top: 30px; }
+        .form-label { color: #333; font-weight: 600; }
+        .form-control { border: 1px solid #DDD; }
+        .form-control:focus { border-color: #FF5722; box-shadow: 0 0 0 0.2rem rgba(255,87,34,.25); }
+        .btn-save { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; border: none; }
+        .btn-save:hover { color: white; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,87,34,.3); }
+        .avatar-section { text-align: center; margin-bottom: 30px; }
+        .avatar { width: 100px; height: 100px; background: linear-gradient(135deg, #FF5722, #FF9800); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin: 0 auto 15px; }
+        /* Desktop Dropdown Styles */
+        @media (min-width: 992px) {
+            .dropdown-menu-end { right: 0 !important; left: auto !important; }
+            .btn-login { width: auto !important; padding: 8px 20px !important; }
+        }
+        /* Mobile Dropdown Styles */
+        @media (max-width: 991px) {
+            .navbar-nav { gap: 0; }
+            .dropdown-menu { position: static !important; border: none; box-shadow: none; background: #f8f9fa; padding-left: 20px; }
+            .dropdown-menu li { margin: 5px 0; }
+            .dropdown-item { color: #333 !important; padding: 10px 15px; }
+            .dropdown-item:hover { background: rgba(255,87,34,.1) !important; }
+            .dropdown-item i { width: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link btn-login dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user me-2"></i>John Doe</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-th-large me-2"></i>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="my-bookings.html"><i class="fas fa-book me-2"></i>My Bookings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Profile Header -->
+<div class="profile-header">
+    <div class="container">
+        <h1><i class="fas fa-user-circle me-2"></i>My Profile</h1>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main class="container my-5">
+    <div class="profile-card" data-aos="fade-up">
+        <!-- Avatar -->
+        <div class="avatar-section">
+            <div class="avatar"><i class="fas fa-user"></i></div>
+            <h3 class="mb-2">John Doe</h3>
+            <span style="background: rgba(212,175,55,.2); color: #D4AF37; padding: 6px 12px; border-radius: 20px; display: inline-block;">Gold Member</span>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal"><i class="fas fa-user-tie me-2"></i>Personal Info</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="address-tab" data-bs-toggle="tab" data-bs-target="#address"><i class="fas fa-map-pin me-2"></i>Address</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="preferences-tab" data-bs-toggle="tab" data-bs-target="#preferences"><i class="fas fa-sliders-h me-2"></i>Preferences</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account"><i class="fas fa-shield-alt me-2"></i>Account</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Personal Info Tab -->
+            <div class="tab-pane fade show active" id="personal" role="tabpanel">
+                <h5 class="mt-4 mb-3">Personal Information</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" value="John">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" value="Doe">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" value="john.doe@example.com">
+                    <small class="text-success"><i class="fas fa-check-circle me-1"></i>Verified</small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                    <small class="text-success"><i class="fas fa-check-circle me-1"></i>Verified</small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" value="1990-05-15">
+                </div>
+                <button class="btn btn-save">Save Changes</button>
+            </div>
+
+            <!-- Address Tab -->
+            <div class="tab-pane fade" id="address" role="tabpanel">
+                <h5 class="mt-4 mb-3">Current Address</h5>
+                <p style="color: #666;"><i class="fas fa-map-pin me-2" style="color: #FF5722;"></i>123 Main Street, Apt 4B, New York, NY 10001</p>
+                <h5 class="mt-4 mb-3">Edit Address</h5>
+                <div class="mb-3">
+                    <label class="form-label">Street Address</label>
+                    <input type="text" class="form-control" value="123 Main Street, Apt 4B">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" value="New York">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">State</label>
+                        <input type="text" class="form-control" value="NY">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">ZIP Code</label>
+                        <input type="text" class="form-control" value="10001">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Special Instructions</label>
+                    <textarea class="form-control" rows="3">Gate code: 1234, Ring bell twice</textarea>
+                </div>
+                <button class="btn btn-save">Update Address</button>
+            </div>
+
+            <!-- Preferences Tab -->
+            <div class="tab-pane fade" id="preferences" role="tabpanel">
+                <h5 class="mt-4 mb-3">Preferences</h5>
+                <div class="mb-3">
+                    <label class="form-label">Vehicle Type</label>
+                    <select class="form-select">
+                        <option selected>Premium Sedan</option>
+                        <option>Business Class</option>
+                        <option>Standard</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Payment Method</label>
+                    <select class="form-select">
+                        <option selected>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>Digital Wallet</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Climate Control</label>
+                    <select class="form-select">
+                        <option>Cold (18Â°C)</option>
+                        <option selected>Moderate (21Â°C)</option>
+                        <option>Warm (24Â°C)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Music Preference</label>
+                    <select class="form-select">
+                        <option>Classical</option>
+                        <option selected>Jazz</option>
+                        <option>Pop</option>
+                        <option>No Music</option>
+                    </select>
+                </div>
+                <button class="btn btn-save">Save Preferences</button>
+            </div>
+
+            <!-- Account Tab -->
+            <div class="tab-pane fade" id="account" role="tabpanel">
+                <h5 class="mt-4 mb-3">Account Information</h5>
+                <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <p class="mb-2"><strong>Account Status:</strong> <span style="color: #4CAF50;"><i class="fas fa-check-circle me-1"></i>Active</span></p>
+                    <p class="mb-2"><strong>Member Tier:</strong> <span style="color: #D4AF37;">Gold</span></p>
+                    <p class="mb-0"><strong>Total Trips:</strong> 42</p>
+                </div>
+                <h5 class="mt-4 mb-3">Change Password</h5>
+                <div class="mb-3">
+                    <label class="form-label">Current Password</label>
+                    <input type="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">New Password</label>
+                    <input type="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control">
+                </div>
+                <button class="btn btn-save">Update Password</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5>About City Link Chauffeurs</h5>
+                <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                <div class="footer-social mt-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="package_deals.html">Package Deals</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="service_point_to_point.html">Point to Point</a></li>
+                    <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                    <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                    <li><a href="service_corporate.html">Corporate Services</a></li>
+                    <li><a href="#">Special Events</a></li>
+                    <li><a href="#">Tours & Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                    <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                    <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                <a href="register.html" style="color: var(--color-gold)">Register</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
+
+
+

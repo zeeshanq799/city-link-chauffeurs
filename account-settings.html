@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - City Link</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body { background: #F5F5F5; }
+        .header { background: linear-gradient(135deg, #FF5722, #FF9800); color: white; padding: 40px 0; }
+        .settings-container { display: grid; grid-template-columns: 250px 1fr; gap: 20px; }
+        .settings-nav { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.1); height: fit-content; }
+        .settings-nav button { display: block; width: 100%; text-align: left; padding: 12px; border: none; background: none; cursor: pointer; color: #666; border-left: 4px solid transparent; font-weight: 500; margin-bottom: 5px; }
+        .settings-nav button:hover, .settings-nav button.active { background: rgba(255,87,34,.1); color: #FF5722; border-left-color: #FF5722; }
+        .settings-content { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        .settings-tab { display: none; }
+        .settings-tab.active { display: block; }
+        .toggle-switch { width: 50px; height: 26px; background: #ddd; border-radius: 13px; cursor: pointer; position: relative; display: inline-block; }
+        .toggle-switch.on { background: #4CAF50; }
+        .toggle-switch::after { content: ''; position: absolute; width: 22px; height: 22px; background: white; border-radius: 50%; top: 2px; left: 2px; transition: 0.3s; }
+        .toggle-switch.on::after { left: 26px; }
+        .form-control:focus { border-color: #D4AF37; box-shadow: 0 0 0 0.2rem rgba(212,175,55,.25); }
+        /* Mobile Dropdown Styles */
+        @media (max-width: 991px) {
+            .navbar-nav { gap: 0; }
+            .dropdown-menu { position: static !important; border: none; box-shadow: none; background: #f8f9fa; padding-left: 20px; }
+            .dropdown-menu li { margin: 5px 0; }
+            .dropdown-item { color: #333 !important; padding: 10px 15px; }
+            .dropdown-item:hover { background: rgba(255,87,34,.1) !important; }
+            .dropdown-item i { width: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center flex-column flex-lg-row">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link btn-login dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user me-2"></i>John Doe</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-th-large me-2"></i>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="my-bookings.html"><i class="fas fa-book me-2"></i>My Bookings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="header">
+    <div class="container">
+        <h1>Account Settings</h1>
+    </div>
+</div>
+
+<main class="container my-5">
+    <div class="settings-container">
+        <div class="settings-nav">
+            <button class="active" onclick="switchTab('profile')"><i class="fas fa-user me-2"></i>Profile</button>
+            <button onclick="switchTab('security')"><i class="fas fa-lock me-2"></i>Security</button>
+            <button onclick="switchTab('notifications')"><i class="fas fa-bell me-2"></i>Notifications</button>
+            <button onclick="switchTab('privacy')"><i class="fas fa-shield-alt me-2"></i>Privacy</button>
+            <button onclick="switchTab('preferences')"><i class="fas fa-sliders-h me-2"></i>Preferences</button>
+        </div>
+
+        <div class="settings-content" data-aos="fade-up">
+            <!-- Profile Tab -->
+            <div id="profile" class="settings-tab active">
+                <h5 style="margin-bottom: 20px;">Profile Settings</h5>
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" value="John">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" value="Doe">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" value="john@example.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" value="1990-05-15">
+                </div>
+                <button style="background: linear-gradient(135deg, #FF5722, #FF9800); color: white; border: none; padding: 10px 30px; border-radius: 6px; cursor: pointer; font-weight: 600;">Save Changes</button>
+            </div>
+
+            <!-- Security Tab -->
+            <div id="security" class="settings-tab">
+                <h5 style="margin-bottom: 20px;">Security Settings</h5>
+                <h6 style="margin: 20px 0 15px 0;">Change Password</h6>
+                <div class="mb-3">
+                    <label class="form-label">Current Password</label>
+                    <input type="password" class="form-control" placeholder="Enter current password">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">New Password</label>
+                    <input type="password" class="form-control" placeholder="Enter new password">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm new password">
+                </div>
+                <button style="background: linear-gradient(135deg, #FF5722, #FF9800); color: white; border: none; padding: 10px 30px; border-radius: 6px; cursor: pointer; font-weight: 600; margin-bottom: 30px;">Update Password</button>
+                
+                <h6 style="margin: 30px 0 15px 0;">Two-Factor Authentication</h6>
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #F5F5F5; padding: 15px; border-radius: 6px;">
+                    <span>Enable two-factor authentication for added security</span>
+                    <div class="toggle-switch" onclick="this.classList.toggle('on')"></div>
+                </div>
+            </div>
+
+            <!-- Notifications Tab -->
+            <div id="notifications" class="settings-tab">
+                <h5 style="margin-bottom: 20px;">Notification Settings</h5>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 12px; background: #F5F5F5; border-radius: 6px;">
+                    <span><i class="fas fa-envelope me-2" style="color: #FF5722;"></i>Ride Updates</span>
+                    <div class="toggle-switch on" onclick="this.classList.toggle('on')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 12px; background: #F5F5F5; border-radius: 6px;">
+                    <span><i class="fas fa-map-marker-alt me-2" style="color: #FF5722;"></i>Promotions & Offers</span>
+                    <div class="toggle-switch on" onclick="this.classList.toggle('on')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 12px; background: #F5F5F5; border-radius: 6px;">
+                    <span><i class="fas fa-star me-2" style="color: #FF5722;"></i>Review Reminders</span>
+                    <div class="toggle-switch" onclick="this.classList.toggle('on')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #F5F5F5; border-radius: 6px;">
+                    <span><i class="fas fa-exclamation-circle me-2" style="color: #FF5722;"></i>Account Alerts</span>
+                    <div class="toggle-switch on" onclick="this.classList.toggle('on')"></div>
+                </div>
+            </div>
+
+            <!-- Privacy Tab -->
+            <div id="privacy" class="settings-tab">
+                <h5 style="margin-bottom: 20px;">Privacy Settings</h5>
+                <div style="margin-bottom: 20px;">
+                    <h6>Profile Visibility</h6>
+                    <div style="margin: 10px 0;">
+                        <input type="radio" name="profile-privacy" id="public" checked>
+                        <label for="public" style="margin-left: 8px;">Public - Anyone can see my profile</label>
+                    </div>
+                    <div style="margin: 10px 0;">
+                        <input type="radio" name="profile-privacy" id="private">
+                        <label for="private" style="margin-left: 8px;">Private - Only my contacts</label>
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h6>Data & Analytics</h6>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #F5F5F5; border-radius: 6px;">
+                        <span>Allow data analytics to improve service</span>
+                        <div class="toggle-switch on" onclick="this.classList.toggle('on')"></div>
+                    </div>
+                </div>
+                <div>
+                    <h6>Download Your Data</h6>
+                    <button style="background: #F5F5F5; border: 2px solid #FF9800; color: #FF9800; padding: 10px 30px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                        <i class="fas fa-download me-2"></i>Download Data
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preferences Tab -->
+            <div id="preferences" class="settings-tab">
+                <h5 style="margin-bottom: 20px;">Preferences</h5>
+                <div class="mb-3">
+                    <label class="form-label">Preferred Vehicle Type</label>
+                    <select class="form-control">
+                        <option selected>Economy</option>
+                        <option>Business</option>
+                        <option>Premium</option>
+                        <option>Luxury</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Preferred Payment Method</label>
+                    <select class="form-control">
+                        <option selected>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>Digital Wallet</option>
+                        <option>Cash</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Climate Control</label>
+                    <select class="form-control">
+                        <option selected>Moderate</option>
+                        <option>Cool</option>
+                        <option>Warm</option>
+                        <option>No Preference</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Music Preference</label>
+                    <select class="form-control">
+                        <option selected>Pop</option>
+                        <option>Rock</option>
+                        <option>Jazz</option>
+                        <option>Classical</option>
+                        <option>Quiet/None</option>
+                    </select>
+                </div>
+                <button style="background: linear-gradient(135deg, #FF5722, #FF9800); color: white; border: none; padding: 10px 30px; border-radius: 6px; cursor: pointer; font-weight: 600;">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5>About City Link Chauffeurs</h5>
+                <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                <div class="footer-social mt-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="package_deals.html">Package Deals</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="service_point_to_point.html">Point to Point</a></li>
+                    <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                    <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                    <li><a href="service_corporate.html">Corporate Services</a></li>
+                    <li><a href="#">Special Events</a></li>
+                    <li><a href="#">Tours & Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                    <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                    <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                <a href="register.html" style="color: var(--color-gold)">Register</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    function switchTab(tabName) {
+      const tabs = document.querySelectorAll('.settings-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      
+      const buttons = document.querySelectorAll('.settings-nav button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.closest('button').classList.add('active');
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+

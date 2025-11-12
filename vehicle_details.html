@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Link Chauffeurs - Business Sedan Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+<!-- Navbar (copied from homepage) -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">CITY<span>LINK</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link active" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link btn-login" href="login.html"><i class="fas fa-user me-2"></i>Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Breadcrumb and Header -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-3" style="background: none; padding: 0;">
+                <li class="breadcrumb-item"><a href="index.html" style="color: #d4af37;">Home</a></li>
+                <li class="breadcrumb-item"><a href="vehicles.html" style="color: #d4af37;">Vehicles</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #b8860b;">Business Sedan</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Vehicle Details -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Vehicle Overview -->
+            <div class="col-lg-8">
+                <div class="main-image-container">
+                    <img src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&auto=format&fit=crop" alt="Business Sedan Exterior" class="img-fluid rounded shadow" style="width: 100%; height: 400px; object-fit: cover; cursor: pointer;" onclick="openModal(this.src)">
+                </div>
+                <h1 class="display-4 fw-bold mb-3">Business <span>Sedan</span></h1>
+                <div class="vehicle-overview mb-5">
+                    <h2 class="fw-bold mb-4">Vehicle Overview</h2>
+                    <p class="lead mb-4">Experience premium comfort and reliability with our most popular business sedan. Perfect for corporate travel, airport transfers, and executive transportation.</p>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                            <div class="feature-card text-center p-3 border rounded">
+                                <i class="fas fa-user text-gold mb-2" style="font-size: 2rem;"></i>
+                                <h5>3 Passengers</h5>
+                                <p class="small text-muted">Comfortable seating</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card text-center p-3 border rounded">
+                                <i class="fas fa-suitcase text-gold mb-2" style="font-size: 2rem;"></i>
+                                <h5>3 Large Luggage</h5>
+                                <p class="small text-muted">Ample storage space</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card text-center p-3 border rounded">
+                                <i class="fas fa-gas-pump text-gold mb-2" style="font-size: 2rem;"></i>
+                                <h5>Fuel Efficient</h5>
+                                <p class="small text-muted">Economic and eco-friendly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="vehicle-features mb-5">
+                    <h3 class="fw-bold mb-4">Key Features & Amenities</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-wifi text-gold me-3"></i>
+                                <span>High-speed WiFi connectivity</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-snowflake text-gold me-3"></i>
+                                <span>Climate-controlled air conditioning</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-chair text-gold me-3"></i>
+                                <span>Premium leather seating</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-volume-up text-gold me-3"></i>
+                                <span>Premium audio system</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-mobile-alt text-gold me-3"></i>
+                                <span>USB charging ports</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-shield-alt text-gold me-3"></i>
+                                <span>Advanced safety features</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-tint text-gold me-3"></i>
+                                <span>Tinted privacy windows</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-map-marked-alt text-gold me-3"></i>
+                                <span>GPS navigation system</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="vehicle-terms">
+                    <h3 class="fw-bold mb-4">Terms & Conditions</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-info-circle text-gold me-2"></i>Minimum 2-hour booking required</li>
+                        <li class="mb-2"><i class="fas fa-info-circle text-gold me-2"></i>Cancellations accepted up to 4 hours before pickup</li>
+                        <li class="mb-2"><i class="fas fa-info-circle text-gold me-2"></i>Additional charges apply for wait time beyond 15 minutes</li>
+                        <li class="mb-2"><i class="fas fa-info-circle text-gold me-2"></i>Gratuity not included (suggested 15-20%)</li>
+                        <li class="mb-2"><i class="fas fa-info-circle text-gold me-2"></i>All major credit cards accepted</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Booking Sidebar -->
+            <div class="col-lg-4">
+                <div class="booking-sidebar" style="top: 140px;">
+                    <!-- Price Card -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title fw-bold">Business Sedan</h4>
+                            <div class="vehicle-price mb-3">
+                                <span class="price-large">$79.95</span>
+                                <small class="text-muted">per hour</small>
+                            </div>
+                            <p class="text-muted small mb-4">Minimum 2 hours • Maximum 12 hours</p>
+                            <button class="btn btn-primary-gradient btn-lg w-100 mb-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                                <i class="fas fa-calendar-check me-2"></i>Book Now
+                            </button>
+                            <p class="text-muted small">Free cancellation up to 24 hours</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Info -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold mb-3">Quick Facts</h5>
+                            <div class="quick-info">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Duration:</span>
+                                    <strong>2-12 Hours</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Passengers:</span>
+                                    <strong>1-3</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Luggage:</span>
+                                    <strong>Up to 3 pieces</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Features:</span>
+                                    <strong>WiFi, AC, Leather</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Availability:</span>
+                                    <strong>24/7</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Vehicles -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+            <h2>You Might Also Like</h2>
+            <p>Explore our other premium vehicles</p>
+        </div>
+        <div class="row g-4">
+            <!-- Related Vehicle 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="tour-card h-100">
+                    <div class="tour-img">
+                        <span class="badge-tour"><i class="fas fa-car"></i> Premium</span>
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" alt="Premium Sedan">
+                    </div>
+                    <div class="tour-info">
+                        <h4>Premium Sedan</h4>
+                        <p class="tour-description">Luxury sedan with enhanced features and superior comfort for discerning clients.</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-user"></i> 3 Passengers</span>
+                            <span><i class="fas fa-suitcase"></i> 3 Luggage</span>
+                        </div>
+                        <div class="tour-price">From $95/hour</div>
+                        <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Related Vehicle 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="tour-card h-100">
+                    <div class="tour-img">
+                        <span class="badge-tour"><i class="fas fa-car-side"></i> SUV</span>
+                        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" alt="Luxury SUV">
+                    </div>
+                    <div class="tour-info">
+                        <h4>Luxury SUV</h4>
+                        <p class="tour-description">Spacious SUV perfect for groups, families, or those needing extra cargo space.</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-user"></i> 6 Passengers</span>
+                            <span><i class="fas fa-suitcase"></i> 6 Luggage</span>
+                        </div>
+                        <div class="tour-price">From $120/hour</div>
+                        <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Related Vehicle 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="tour-card h-100">
+                    <div class="tour-img">
+                        <span class="badge-tour"><i class="fas fa-users"></i> Executive</span>
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600" alt="Executive Van">
+                    </div>
+                    <div class="tour-info">
+                        <h4>Executive Van</h4>
+                        <p class="tour-description">Executive van for larger groups with premium amenities and professional service.</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-user"></i> 12 Passengers</span>
+                            <span><i class="fas fa-suitcase"></i> 12 Luggage</span>
+                        </div>
+                        <div class="tour-price">From $150/hour</div>
+                        <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Book Business Sedan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Service Type</label>
+                            <select class="form-select">
+                                <option>Hourly Charter</option>
+                                <option>Point-to-Point</option>
+                                <option>Airport Transfer</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Vehicle Type</label>
+                            <select class="form-select">
+                                <option>Business Sedan</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Pick-up Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Pick-up Time</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Pick-up Location</label>
+                            <input type="text" class="form-control" placeholder="Your pick-up location" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Drop-off Location</label>
+                            <input type="text" class="form-control" placeholder="Your drop-off location" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Duration (hours)</label>
+                            <select class="form-select">
+                                <option>2 hours (minimum)</option>
+                                <option>3 hours</option>
+                                <option>4 hours</option>
+                                <option>5 hours</option>
+                                <option>6 hours</option>
+                                <option>8 hours</option>
+                                <option>10 hours</option>
+                                <option>12 hours</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Passengers</label>
+                            <select class="form-select">
+                                <option>1 Passenger</option>
+                                <option>2 Passengers</option>
+                                <option>3 Passengers</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Special Requests</label>
+                            <textarea class="form-control" rows="3" placeholder="Any special requirements..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary-gradient">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img id="modalImage" src="" alt="" class="img-fluid w-100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Destinations Section -->
+<section class="destinations-section">
+    <div class="container">
+        <h2 class="destinations-title mb-5">DESTINATIONS</h2>
+        <div class="row mb-5">
+            <!-- Column 1 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">Novato, CA</a></li>
+                    <li><a href="#">Fairfield, CA</a></li>
+                    <li><a href="#">Clayton, CA</a></li>
+                    <li><a href="#">Daly City, CA</a></li>
+                    <li><a href="#">Belmont, CA</a></li>
+                    <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                    <li><a href="#">Hercules, CA</a></li>
+                    <li><a href="#">Calistoga, CA</a></li>
+                    <li><a href="#">Palo Alto, CA</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <ul class="destinations-list">
+                    <li><a href="#">El Sobrante, CA</a></li>
+                    <li><a href="#">Atherton, CA</a></li>
+                    <li><a href="#">Lathrop, CA</a></li>
+                    <li><a href="#">Albany, CA</a></li>
+                    <li><a href="#">Manteca, CA</a></li>
+                    <li><a href="#">Discovery Bay, CA</a></li>
+                    <li><a href="#">Martinez, CA</a></li>
+                    <li><a href="#">Benicia, CA</a></li>
+                    <li><a href="#">Berkeley, CA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <a href="#" class="view-all-destinations">View all destinations</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer (copied from homepage) -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5>About City Link Chauffeurs</h5>
+                <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                <div class="footer-social mt-4">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="package_deals.html">Package Deals</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="service_point_to_point.html">Point to Point</a></li>
+                    <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                    <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                    <li><a href="service_corporate.html">Corporate Services</a></li>
+                    <li><a href="#">Special Events</a></li>
+                    <li><a href="#">Tours & Packages</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Info</h5>
+                <ul>
+                    <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                    <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                    <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                    <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                <a href="register.html" style="color: var(--color-gold)">Register</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Image gallery modal function
+    function openModal(imageSrc) {
+        document.getElementById('modalImage').src = imageSrc;
+        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+        modal.show();
+    }
+</script>
+</body>
+</html>

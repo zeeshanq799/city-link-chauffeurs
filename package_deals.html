@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Link Chauffeurs - Package Deals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+    <!-- Navbar (copied from homepage) -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CITY<span>LINK</span></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="package_deals.html">Package Deals</a></li>
+                <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link btn-login" href="login.html"><i class="fas fa-user me-2"></i>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-section position-relative d-flex align-items-center justify-content-center" style="min-height: 60vh; background: url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=1600&auto=format&fit=crop') center/cover;">
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35)); z-index:1;"></div>
+        <div class="container text-center position-relative" style="z-index:2;">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Exclusive Package <span>Deals</span></h1>
+                <p class="lead">Save more on luxury chauffeur services for every occasion</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Grid & Filter -->
+    <section class="py-5" id="packages">
+        <div class="container">
+            <div class="row mb-4 justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h2 class="fw-bold">Our Packages</h2>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <select class="form-select w-auto d-inline-block" style="min-width:180px;">
+                        <option value="all">All Packages</option>
+                        <option value="airport">Airport Transfer</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="corporate">Corporate</option>
+                        <option value="city">City Tour</option>
+                        <option value="group">Group Events</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Package Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card h-100">
+                        <div class="tour-img">
+                            <span class="badge-tour"><i class="fas fa-plane"></i> Airport</span>
+                            <img src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=600" alt="Airport Transfer">
+                        </div>
+                        <div class="tour-info">
+                            <h4>Airport Transfer</h4>
+                            <p class="tour-description">Seamless airport pickups and drop-offs with fixed rates.</p>
+                            <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> 1 Hour</span>
+                                <span><i class="fas fa-users"></i> Up to 3</span>
+                            </div>
+                            <div class="tour-price">From $49</div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                                <a href="package_details.html" class="btn btn-outline-primary"><i class="fas fa-eye"></i> View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card h-100">
+                        <div class="tour-img">
+                            <span class="badge-tour"><i class="fas fa-heart"></i> Wedding</span>
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600" alt="Wedding Chauffeur">
+                        </div>
+                        <div class="tour-info">
+                            <h4>Wedding Chauffeur</h4>
+                            <p class="tour-description">Arrive in style for your big day with luxury vehicles and decor.</p>
+                            <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> 4 Hours</span>
+                                <span><i class="fas fa-users"></i> Up to 6</span>
+                            </div>
+                            <div class="tour-price">From $99</div>
+                            <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card h-100">
+                        <div class="tour-img">
+                            <span class="badge-tour"><i class="fas fa-briefcase"></i> Corporate</span>
+                            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600" alt="Corporate Travel">
+                        </div>
+                        <div class="tour-info">
+                            <h4>Corporate Travel</h4>
+                            <p class="tour-description">Professional business travel solutions for meetings and events.</p>
+                            <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> 2 Hours</span>
+                                <span><i class="fas fa-users"></i> Up to 4</span>
+                            </div>
+                            <div class="tour-price">From $59</div>
+                            <a href="service_business_travel.html" class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card h-100">
+                        <div class="tour-img">
+                            <span class="badge-tour"><i class="fas fa-city"></i> City Tour</span>
+                            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600" alt="City Tour">
+                        </div>
+                        <div class="tour-info">
+                            <h4>City Tour</h4>
+                            <p class="tour-description">Explore the city with a private chauffeur and custom itinerary.</p>
+                            <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> 3 Hours</span>
+                                <span><i class="fas fa-users"></i> Up to 3</span>
+                            </div>
+                            <div class="tour-price">From $69</div>
+                            <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card h-100">
+                        <div class="tour-img">
+                            <span class="badge-tour"><i class="fas fa-users"></i> Group</span>
+                            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=600" alt="Group Events">
+                        </div>
+                        <div class="tour-info">
+                            <h4>Group Events</h4>
+                            <p class="tour-description">Luxury transport for parties, concerts, and group outings.</p>
+                            <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> 5 Hours</span>
+                                <span><i class="fas fa-users"></i> Up to 10</span>
+                            </div>
+                            <div class="tour-price">From $79</div>
+                            <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card h-100">
+                        <div class="tour-img">
+                            <span class="badge-tour"><i class="fas fa-star"></i> Custom</span>
+                            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600" alt="Custom Package">
+                        </div>
+                        <div class="tour-info">
+                            <h4>Custom Package</h4>
+                            <p class="tour-description">Tailored chauffeur services for any special request or event.</p>
+                            <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> Flexible</span>
+                                <span><i class="fas fa-users"></i> Any Group Size</span>
+                            </div>
+                            <div class="tour-price">Contact for Quote</div>
+                            <button class="btn btn-book-tour"><i class="fas fa-calendar-check"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Custom Quote CTA -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-3">Need a Custom Package or Have Questions?</h3>
+            <p class="mb-4">Contact us for a personalized quote or to discuss your requirements.</p>
+            <a href="#contact" class="btn btn-primary-gradient btn-hero">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations-section">
+        <div class="container">
+            <h2 class="destinations-title mb-5">DESTINATIONS</h2>
+            <div class="row mb-5">
+                <!-- Column 1 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <ul class="destinations-list">
+                        <li><a href="#">Novato, CA</a></li>
+                        <li><a href="#">Fairfield, CA</a></li>
+                        <li><a href="#">Clayton, CA</a></li>
+                        <li><a href="#">Daly City, CA</a></li>
+                        <li><a href="#">Belmont, CA</a></li>
+                        <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                        <li><a href="#">Hercules, CA</a></li>
+                        <li><a href="#">Calistoga, CA</a></li>
+                        <li><a href="#">Palo Alto, CA</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <ul class="destinations-list">
+                        <li><a href="#">Novato, CA</a></li>
+                        <li><a href="#">Fairfield, CA</a></li>
+                        <li><a href="#">Clayton, CA</a></li>
+                        <li><a href="#">Daly City, CA</a></li>
+                        <li><a href="#">Belmont, CA</a></li>
+                        <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                        <li><a href="#">Hercules, CA</a></li>
+                        <li><a href="#">Calistoga, CA</a></li>
+                        <li><a href="#">Palo Alto, CA</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <ul class="destinations-list">
+                        <li><a href="#">Novato, CA</a></li>
+                        <li><a href="#">Fairfield, CA</a></li>
+                        <li><a href="#">Clayton, CA</a></li>
+                        <li><a href="#">Daly City, CA</a></li>
+                        <li><a href="#">Belmont, CA</a></li>
+                        <li><a href="#">Carmel-by-the-Sea, CA</a></li>
+                        <li><a href="#">Hercules, CA</a></li>
+                        <li><a href="#">Calistoga, CA</a></li>
+                        <li><a href="#">Palo Alto, CA</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <ul class="destinations-list">
+                        <li><a href="#">El Sobrante, CA</a></li>
+                        <li><a href="#">Atherton, CA</a></li>
+                        <li><a href="#">Lathrop, CA</a></li>
+                        <li><a href="#">Albany, CA</a></li>
+                        <li><a href="#">Manteca, CA</a></li>
+                        <li><a href="#">Discovery Bay, CA</a></li>
+                        <li><a href="#">Martinez, CA</a></li>
+                        <li><a href="#">Benicia, CA</a></li>
+                        <li><a href="#">Berkeley, CA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="view-all-destinations">View all destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (copied from homepage) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5>About City Link Chauffeurs</h5>
+                    <p style="color: rgba(255,255,255,.7); line-height: 1.8">Premium chauffeur services providing luxury, comfort, and professionalism. Your journey is our priority.</p>
+                    <div class="footer-social mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="package_deals.html">Package Deals</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="service_point_to_point.html">Point to Point</a></li>
+                        <li><a href="service_hourly_charter.html">Hourly Charter</a></li>
+                        <li><a href="service_airport_transfer.html">Airport Transfer</a></li>
+                        <li><a href="service_corporate.html">Corporate Services</a></li>
+                        <li><a href="#">Special Events</a></li>
+                        <li><a href="#">Tours & Packages</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul>
+                        <li><i class="fas fa-phone me-2" style="color: var(--color-gold)"></i> 1-877-435-5466</li>
+                        <li><i class="fas fa-envelope me-2" style="color: var(--color-gold)"></i> info@citylinkchauffeurs.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2" style="color: var(--color-gold)"></i> Sialkot, Punjab, Pakistan</li>
+                        <li><i class="fas fa-clock me-2" style="color: var(--color-gold)"></i> 24/7 Available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Link Chauffeurs. All Rights Reserved. |
+                    <a href="#" style="color: var(--color-gold)">Privacy Policy</a> |
+                    <a href="#" style="color: var(--color-gold)">Terms & Conditions</a> |
+                    <a href="login.html" style="color: var(--color-gold)">Login</a> |
+                    <a href="register.html" style="color: var(--color-gold)">Register</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
