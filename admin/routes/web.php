@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\DriverController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Admin\ServiceController;
 
 Route::get('/', function () {
     return redirect('/admin');
@@ -61,5 +63,21 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
         ->name('customers.toggle-status');
     Route::post('customers/{customer}/add-points', [CustomerController::class, 'addPoints'])
         ->name('customers.add-points');
+    
+    // Package Management
+    Route::resource('packages', PackageController::class);
+    Route::post('packages/{package}/toggle-featured', [PackageController::class, 'toggleFeatured'])
+        ->name('packages.toggle-featured');
+    Route::post('packages/{package}/duplicate', [PackageController::class, 'duplicate'])
+        ->name('packages.duplicate');
+    
+    // Service Management
+    Route::resource('services', ServiceController::class);
+    Route::post('services/{service}/toggle-active', [ServiceController::class, 'toggleActive'])
+        ->name('services.toggle-active');
+    Route::post('services/{service}/toggle-featured', [ServiceController::class, 'toggleFeatured'])
+        ->name('services.toggle-featured');
+    Route::post('services/{service}/duplicate', [ServiceController::class, 'duplicate'])
+        ->name('services.duplicate');
     
 });

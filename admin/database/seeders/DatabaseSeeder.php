@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             VehicleTypeSeeder::class,
             DriverSeeder::class,
             CustomerSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }

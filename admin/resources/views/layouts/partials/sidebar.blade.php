@@ -90,6 +90,34 @@
                 </a>
             </li>
             
+            <!-- Packages -->
+            <li>
+                <a href="{{ route('admin.packages.index') }}" 
+                   class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all group {{ request()->routeIs('admin.packages.*') ? 'bg-primary-50 text-primary-600' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <svg class="w-5 h-5 {{ request()->routeIs('admin.packages.*') ? 'text-primary-600' : 'text-gray-500 group-hover:text-gray-700' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                    </svg>
+                    <span x-show="open" x-transition class="ml-3 whitespace-nowrap">Package Deals</span>
+                    <span x-show="open" x-transition class="ml-auto px-2 py-0.5 text-xs font-medium rounded-full bg-primary-100 text-primary-700">
+                        {{ \App\Models\Package::active()->count() }}
+                    </span>
+                </a>
+            </li>
+            
+            <!-- Services -->
+            <li>
+                <a href="{{ route('admin.services.index') }}" 
+                   class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all group {{ request()->routeIs('admin.services.*') ? 'bg-primary-50 text-primary-600' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <svg class="w-5 h-5 {{ request()->routeIs('admin.services.*') ? 'text-primary-600' : 'text-gray-500 group-hover:text-gray-700' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                    </svg>
+                    <span x-show="open" x-transition class="ml-3 whitespace-nowrap">Services</span>
+                    <span x-show="open" x-transition class="ml-auto px-2 py-0.5 text-xs font-medium rounded-full bg-primary-100 text-primary-700">
+                        {{ \App\Models\Service::active()->count() }}
+                    </span>
+                </a>
+            </li>
+            
             <!-- Divider -->
             <li x-show="open" x-transition class="pt-4 pb-2">
                 <span class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">System</span>
